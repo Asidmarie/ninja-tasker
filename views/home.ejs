@@ -23,10 +23,12 @@
       </form>
 
       <ul>
-        <% for (let i=0; i< list.length; i++){%>
-        <li class="ninja-item"><%= list[i] %></li>
+        <% for (let index=0; index < list.length; index++) {%>
+        <li class="ninja-item" id=<%= index %> > <%= list[index] %></li>
         <% } %>
       </ul>
     </div>
+
+    <script src="./main.js"></script>
   </body>
 </html>
