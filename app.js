@@ -1,6 +1,7 @@
 // packages
 const express = require("express");
 const bodyParser = require("body-parser");
+const db = require("./models");
 
 //starting express app
 const app = express();
@@ -36,7 +37,10 @@ app.delete("/delete/:index", function(req, res) {
   res.json(list);
 });
 
-//server listing for request
-app.listen(3000, function() {
-  console.log("server is lit!!!");
+db.sequelize.sync().then(function() {
+  //server listing for request
+  app.listen(3000, function(err) {
+    if (err) console.log(err);
+    console.log("server is lit!!!");
+  });
 });
