@@ -2,10 +2,9 @@
 
 //exporting this model to our index
 module.exports = function(sequelize, DataTypes) {
-  var Task = sequelize.define("Task", {
+  var Tasks = sequelize.define("Tasks", {
     //define columns of our table
-    title: { type: DataTypes.STRING },
-    body: { type: DataTypes.STRING }
+    todo: { type: DataTypes.STRING }
   });
-  return Task;
+  return Tasks;
 };
